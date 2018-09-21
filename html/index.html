@@ -2,9 +2,12 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<!-- main css -->
-	<link rel="stylesheet" type="text/css" href="../css/main.css">
 	<title>Home</title>
+	<!-- slick sliders css -->
+	<link rel="stylesheet" type="text/css" href="../libs/slick-1.8.1/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="../libs/slick-1.8.1/slick/slick-theme.css">
+    <!-- main css -->
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
 </head>
 <body>
 
@@ -12,7 +15,7 @@
 	<header>
 
 		<div class="logo">
-			<a href="#"><img src="../resources/header/logo.png" alt=""></a>
+			<a href="#"><img src="../resources/img/header/logo.png" alt="liAn logo"></a>
 		</div>
 
 		<!-- nav menu -->
@@ -32,7 +35,8 @@
 			<li><a href="#">Blog</a></li>
 			<li><a href="#">Contact</a></li>
 		</ul>
-
+		
+		<!-- search -->
 		<div class="search-widget">
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250.313 250.313" xml:space="preserve" width="1.25vw" height="1.25vw" fill="#777777">
 			<g id="Search">
@@ -42,8 +46,15 @@
 		</div>
 	</header>
 
+	<section class="main-photoslider">
+		<div class="main-photoslider-slide" style="background-image: url('../resources/img/index/main-slider_1.jpg');"></div>
+		<div class="main-photoslider-slide" style="background-image: url('../resources/img/index/main-slider_2.jpg');"></div>
+		<div class="main-photoslider-slide" style="background-image: url('../resources/img/index/main-slider_3.jpg');"></div>
+	</section>
+
 
 	<script src="../libs/jQuery/jquery.js"></script>
+	<script src="../libs/slick-1.8.1/slick/slick.min.js"></script>
 	<script src="../js/init.js"></script>
 </body>
 </html>

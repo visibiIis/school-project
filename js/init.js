@@ -1,5 +1,6 @@
 $(function()
 {
+	// Открытие/скрытие бургер-меню
 	$('.menu-btn, .menu').click(function()
 	{
 		$('.menu').toggleClass('menu-active');
@@ -7,11 +8,18 @@ $(function()
 		$('.menu-lock').toggleClass('menu-lock-active');
 	});
 
-	// $('.menu-btn').click(function(){
-	// 	$('.menu-btn').fadeOut('.menu-btn');
-	// })
+	// Костыль по отмене действия перетаскивания картинок на странице
+	$("img").mousedown(function(){
+	    return false;
+	});
 
-	// $('.menu > .close').click(function(){
-	// 	$('.menu-btn').fadeIn('.menu-btn');
-	// })
+	if($('.main-photoslider').length > 0) {
+		$('.main-photoslider').slick({
+			dots: true,
+	      infinite: true,
+	      autoplay: true,
+	      autoplaySpeed: 7999,
+	      draggable: false,
+		});
+	}
 })
