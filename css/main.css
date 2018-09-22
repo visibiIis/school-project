@@ -5,6 +5,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Roboto Light';
+    src: url('../resources/fonts/RobotoLight.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -176,7 +183,7 @@ header .search-widget:hover svg {
 
 
 .main-photoslider {
-
+	text-align: center;
 }
 
 .main-photoslider .main-photoslider-slide {
@@ -263,10 +270,37 @@ header .search-widget:hover svg {
 	opacity: 1;
 	transition: all .35s linear;
 }
+
 .main-photoslider .slick-dots li button:hover:before,
 .main-photoslider .slick-dots li.slick-active button:before {
 	background: #000000;
 	color: #ffffff;
 	opacity: 1;
 	transition: all .35s linear;
+}
+
+.main-photoslider h1 {
+	display: inline-block;
+	font-family: Roboto Light;
+	font-size: 2.75vw;
+	font-weight: normal;
+	letter-spacing: .6875vw;
+	padding: 0 2.25vw 0 2.9375vw;
+	margin-top: 14.4375vw;
+	color: #ffffff;
+	background: #000000;
+	text-transform: uppercase;
+	max-width: 56.25vw;
+}
+
+.main-photoslider span {
+	display: block;
+	font-family: Roboto Light;
+	font-size: 1.125vw;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #000000;
+	letter-spacing: .575vw;
+	margin: 2.375vw auto;
+	max-width: 56.25vw;
 }
