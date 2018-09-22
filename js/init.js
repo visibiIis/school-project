@@ -1,5 +1,14 @@
 $(function()
 {
+	$('header').removeClass('fixed');
+	$(window).scroll(function(){
+		if($(this).scrollTop() > 20) {
+			$('header').addClass('fixed').fadeIn('fast');
+		} else {
+			$('header').removeClass('fixed').fadeIn('fast');
+		}
+	});
+
 	// Открытие/скрытие бургер-меню
 	$('.menu-btn, .menu').click(function()
 	{
