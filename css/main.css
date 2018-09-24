@@ -12,11 +12,11 @@
     font-style: normal;
 }
 
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	color: #777777;
+@font-face {
+    font-family: 'Roboto Bold';
+    src: url('../resources/fonts/RobotoBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 
@@ -39,14 +39,14 @@ header.fixed {
 	position: fixed;
 	top: 0;
 	box-shadow: none;
-	opacity: .8
+	background: rgba(255, 255, 255, 0.8);
 
 }
 
 header .logo {
 	display: inline-block;
 	margin-left: 14.25vw;
-	margin-right: 55vw;
+	margin-right: 54vw;
 
 	/* Отмена выделения логотипа */
     -webkit-user-select: none;
@@ -64,7 +64,6 @@ header .menu-btn {
 	display: inline-block;
 	width: 2.5vw;
 	height: 2vw;
-	right: 18.9375vw;
 	cursor: pointer;
 	opacity: 1;
 	transition: all .5s;
@@ -127,12 +126,11 @@ header .menu-btn:hover span:after {
 }
 
 header .menu {
-	list-style: none;
 	position: absolute;
 	transition: .7s;
 	transform: scaleX(0);
 	transform-origin: right center;
-	right: 21.4375vw;
+	right: 22.4375vw;
 	top: 2.25vw;
 	line-height: 1;
 }
@@ -175,7 +173,6 @@ header .menu li:first-of-type {
 }
 
 header .menu a {
-	text-decoration: none;
 	text-transform: uppercase;
 	font-family: Myriad Pro Regular;
 	font-weight: bold;
@@ -192,7 +189,7 @@ header .search-widget {
 	height: 1.25vw;
 	cursor: pointer;
 	position: absolute;
-	right: 13.9vw;
+	right: 14.375vw;
 	top: 2.25vw;
 	line-height: 1;
 }
@@ -342,4 +339,57 @@ header.fixed + .main-photoslider .main-photoslider-slide {
 
 .main-gallery {
 	background: #ffffff;
+	width: 71.25vw;
+	margin: 0 auto;
+	height: 40vw;
+	padding-top: 2.0625vw; 
 }
+
+.main-gallery .category-list {
+	display: block;
+	border-top: 1px solid silver;
+	border-bottom: 1px solid silver;
+	text-align: center;
+	padding: 1.325vw 0 1.325vw 0; 
+}
+
+.main-gallery .category-list li {
+	display: inline-block;
+	font-family: Roboto Bold;
+	font-size: .9vw;
+	text-transform: uppercase;
+	margin-left: 2.4vw; 
+}
+
+.main-gallery .category-list a:hover,
+.main-gallery .category-list a.active {
+	color: #111111;
+}
+
+.main-gallery .category-list li:after {
+	display: inline-block;
+	position: absolute;
+	content: '/';
+	margin: -0.3vw 0 0 1.125vw;
+	font-family: Roboto Light;
+	font-size: 1.4vw;
+	color: #d9d9d9;
+}
+
+.main-gallery .category-list li:last-child:after {
+	content: '';
+}
+
+.main-gallery .photos {
+	margin: 1.8125vw 0 0 0;
+}
+
+.main-gallery .photos .gutter-sizer {
+	width: 1.875vw;
+}
+
+.main-gallery .photos img {
+	width: 22.5vw;
+	margin: 0 0 1.875vw 0;
+}
+
