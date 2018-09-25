@@ -39,120 +39,68 @@ $(function()
 
    if (gutterSizer && columnWidth) 
    {
-			gutterSizer = gutterSizer.replace(/[^-0-9.]/gim,'');
-			gutterSizer = Math.round(gutterSizer * 10) / 10;
+		gutterSizer = gutterSizer.replace(/[^-0-9.]/gim,'');
+		gutterSizer = Math.round(gutterSizer * 10) / 10;
 
-			columnWidth = columnWidth.replace(/[^-0-9.]/gim,'');
-			columnWidth = Math.round(columnWidth * 10) / 10;
+		columnWidth = columnWidth.replace(/[^-0-9.]/gim,'');
+		columnWidth = Math.round(columnWidth * 10) / 10;
    }
 
 	$('.photos').masonry(
 	{
-			itemSelector: '.photo-item:not(.unactive)',
-			columnWidth: columnWidth,
-			gutter: gutterSizer,
+		itemSelector: '.photo-item:not(.unactive)',
+		columnWidth: columnWidth,
+		gutter: gutterSizer,
    });
 
+   // Выбор картинок по категориям
    $('.category-list').find('a').click(function(event)
 	{
 		event.preventDefault();
+
+		count = $('.category-list').find('a');
+
+		$(count).each(function()
+		{
+			if ($(this).hasClass('active')) 
+			{
+				$(this).removeClass('active');
+			}
+		});
+
+		$(this).addClass('active');
 	});
 
-   // Выбор картинок по категориям
-   var active = '';
- 
 	function filterPhotos(photo)
 	{
-		if(active != photo)
+		active = '';
+
+		if (active != photo)
 		{
-			$('img').filter('.' + photo).removeClass('unactive');
-			$('img').filter(':not(.' + photo + ')').addClass('unactive');
+			$('.photos img').filter('.' + photo).removeClass('unactive');
+			$('.photos img').filter(':not(.' + photo + ')').addClass('unactive');
 			active = photo;
 		}
+
+		if (active == 'all') 
+		{
+			$('.photos img').removeClass('unactive');
+		}
+
+		$('.photos').masonry(
+		{
+			itemSelector: '.photo-item:not(.unactive)',
+			columnWidth: columnWidth,
+			gutter: gutterSizer,
+	   });
 	}
 	 
-	$('.logo').click(function()
-	{
-		filterPhotos('logo'); 
-
-		$('.photos').masonry(
-		{
-			itemSelector: '.photo-item:not(.unactive)',
-			columnWidth: columnWidth,
-			gutter: gutterSizer,
-	   });
-	});
-
-	$('.mobile-app').click(function()
-	{ 
-		filterPhotos('mobile-app'); 
-
-		$('.photos').masonry(
-		{
-			itemSelector: '.photo-item:not(.unactive)',
-			columnWidth: columnWidth,
-			gutter: gutterSizer,
-	   });
-	});
-
-	$('.wordpress').click(function()
-	{
-	 	filterPhotos('wordpress'); 
-
-	 	$('.photos').masonry(
-		{
-			itemSelector: '.photo-item:not(.unactive)',
-			columnWidth: columnWidth,
-			gutter: gutterSizer,
-	   });
-	});
-
-	$('.web-design').click(function()
-	{ 
-		filterPhotos('web-design'); 
-
-		$('.photos').masonry(
-		{
-			itemSelector: '.photo-item:not(.unactive)',
-			columnWidth: columnWidth,
-			gutter: gutterSizer,
-	   });
-	});
-
-	$('.ui-ix').click(function()
-	{
-		filterPhotos('ui-ix'); 
-
-		$('.photos').masonry(
-		{
-			itemSelector: '.photo-item:not(.unactive)',
-			columnWidth: columnWidth,
-			gutter: gutterSizer,
-	   });
-	});
-
-	$('.branding').click(function()
-	{ 
-		filterPhotos('branding'); 
-
-		$('.photos').masonry(
-		{
-			itemSelector: '.photo-item:not(.unactive)',
-			columnWidth: columnWidth,
-			gutter: gutterSizer,
-	   });
-	});
-	
-	$('.all').click(function()
-	{
-		$('img').removeClass('unactive');
-
-		$('.photos').masonry(
-		{
-			itemSelector: '.photo-item',
-			columnWidth: columnWidth,
-			gutter: gutterSizer,
-	   });
-	});
+	$('.category-list .logo').click(function() { filterPhotos('logo'); });
+	$('.category-list .mobile-app').click(function() { filterPhotos('mobile-app'); });
+	$('.category-list .wordpress').click(function() { filterPhotos('wordpress'); });
+	$('.category-list .web-design').click(function() { filterPhotos('web-design'); });
+	$('.category-list .ui-ix').click(function() { filterPhotos('ui-ix'); });
+	$('.category-list .branding').click(function() { filterPhotos('branding'); });
+	$('.category-list .all').click(function() { filterPhotos('all'); });
 
 })
