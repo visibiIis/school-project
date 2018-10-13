@@ -442,19 +442,19 @@ footer .social-networks {
             user-select: none;
 }
 
-footer .social-networks div {
+footer .social-networks a {
 	width: 2vw;
 	height: 2vw;
 	line-height: 2vw;
 	display: inline-block;
 }
 
-footer .social-networks div:hover {
+footer .social-networks a:hover {
 	cursor: pointer;
 	color: #000000;
 }
 
-footer .social-networks div:hover svg {
+footer .social-networks a:hover svg {
 	fill: #000000;
 }
 
@@ -469,4 +469,153 @@ footer .all-rights-reserved {
 
 footer .all-rights-reserved span span {
 	color: #000000;
+}
+
+
+/*     about-banner     */
+
+
+.about-banner {
+	height: 21.875vw;
+	background-color: #ffffff;
+	background-image: url('../resources/img/about/about-banner.jpg');
+	background-repeat: no-repeat;
+	-webkit-background-size: auto 30vw;
+	background-size: auto 30vw;
+	background-position-y: -2vw;
+	background-position-x: right;
+}
+
+.about-banner h1 {
+	display: inline-block;
+	font-family: Roboto Light;
+	font-size: 2.75vw;
+	font-weight: normal;
+	letter-spacing: .3875vw;
+	padding: 0 1.25vw 0 1.45vw;
+	color: #ffffff;
+	background: #000000;
+	text-transform: uppercase;
+	margin: 7.1875vw 0 0 14.25vw;
+}
+
+.about-banner span {
+	display: block;
+	font-family: Myriad Pro Regular;
+	font-size: 1.0725vw;
+	letter-spacing: .5vw;
+	color: #000000;
+	text-transform: uppercase;
+	margin: 2.75vw 0 0 14.25vw;
+}
+
+
+/*     story & skills     */
+
+
+.story-skills {
+	background: #ffffff;
+	padding: 4.5vw;
+}
+
+.story-skills .container {
+	width: 71.5vw;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+}
+
+.story-skills .container .image {
+	width: 33.1875vw;
+	height: 37.5vw;
+	background-image: url('../resources/img/about/story-skills.jpg');
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+	background-position-x: -14vw;
+}
+
+.story-skills .container .info {
+	width: 34.5vw;
+}
+
+.story-skills .container .info .desc {
+	margin-bottom: 1.7vw;
+}
+
+.story-skills .container .info .desc h1,
+.story-skills .container .info .pro h1 {
+	font-family: Roboto Light;
+	font-size: 1.1vw;
+	color: black;
+	letter-spacing: .625vw;
+	text-transform: uppercase;
+}
+
+.story-skills .container .info .desc p {
+	font-family: Myriad Pro Regular;
+	font-size: .9vw;
+	line-height: 1.8vw;
+	margin-top: 2.7vw;
+}
+
+.story-skills .container .info .pro h1 {
+	margin-bottom: .3vw;
+}
+
+.story-skills .container .info .pro progress {
+	display: block;
+	width: 34.5vw;
+	height: .625vw;
+	padding: .25vw .1875vw .25vw .1875vw;
+	border: 0 none;
+	background: #ebebeb;
+}
+
+.story-skills .container .info .pro progress:nth-of-type(1):after,
+.story-skills .container .info .pro progress:nth-of-type(2):after,
+.story-skills .container .info .pro progress:nth-of-type(3):after,
+.story-skills .container .info .pro progress:nth-of-type(4):after {
+	content: '•';
+	display: block;
+	position: absolute;
+	width: .75vw;
+	height: .75vw;
+	border-radius: 50%;
+	text-align: center;
+	line-height: .75vw;
+	background: black;
+	color: white;
+}
+
+.story-skills .container .info .pro progress:nth-of-type(1):after {
+	margin: -0.45vw 0 0 30vw;
+}
+
+.story-skills .container .info .pro progress:nth-of-type(2):after {
+	margin: -0.45vw 0 0 32vw;
+}
+
+.story-skills .container .info .pro progress:nth-of-type(3):after {
+	margin: -0.45vw 0 0 17vw;
+}
+
+.story-skills .container .info .pro progress:nth-of-type(4):after {
+	margin: -0.45vw 0 0 28.5vw;
+}
+
+.story-skills .container .info .pro progress::-webkit-progress-bar {
+    background: transparent;
+}  
+
+.story-skills .container .info .pro progress::-webkit-progress-value {  
+	border-radius: 12px;
+	background: #a1a1a1;
+}
+
+.story-skills .container .info .pro span {
+	display: block;
+	font-family: Roboto Bold;
+	font-size: 1vw;
+	color: black;
+	margin: 1.0875vw 0 1.0875vw 0;
 }
