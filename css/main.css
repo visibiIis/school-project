@@ -6,6 +6,13 @@
 }
 
 @font-face {
+    font-family: 'Roboto';
+    src: url('../resources/fonts/Roboto.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'Roboto Light';
     src: url('../resources/fonts/RobotoLight.ttf') format('truetype');
     font-weight: normal;
@@ -22,6 +29,13 @@
 @font-face {
     font-family: 'Roboto Regular';
     src: url('../resources/fonts/RobotoRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato Regular';
+    src: url('../resources/fonts/LatoRegular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -225,7 +239,8 @@ header .search-widget:hover svg {
     background-size: cover;
 }
 
-header.fixed + .main-photoslider .main-photoslider-slide {
+header.fixed + .main-photoslider .main-photoslider-slide,
+header.fixed + .about-banner {
 	margin-top: 5vw;
 } 
 
@@ -477,8 +492,8 @@ footer .all-rights-reserved span span {
 
 .about-banner {
 	height: 21.875vw;
-	background-color: #ffffff;
-	background-image: url('../resources/img/about/about-banner.jpg');
+	background: linear-gradient(to left, #ffffff, #f0f0f2);
+	background-image: url('../resources/img/about/about-banner.png');
 	background-repeat: no-repeat;
 	-webkit-background-size: auto 30vw;
 	background-size: auto 30vw;
@@ -515,7 +530,7 @@ footer .all-rights-reserved span span {
 
 .story-skills {
 	background: #ffffff;
-	padding: 4.5vw;
+	padding: 4.5vw 0 0 0;
 }
 
 .story-skills .container {
@@ -619,3 +634,165 @@ footer .all-rights-reserved span span {
 	color: black;
 	margin: 1.0875vw 0 1.0875vw 0;
 }
+
+.story-skills .container .info .pro div {
+	
+	position: absolute;
+	z-index: 10;
+	width: 2.5vw;
+	height: 1.3125vw;
+	background: black;
+	font-family: Lato Regular;
+	font-size: .7125vw;
+	line-height: 1.3125vw;
+	text-align: center;
+	color: #f4f7fc;
+	margin-top: -2.2vw;
+	transition: all .25s linear;
+	transform: scaleX(0);
+	transform-origin: left center;
+}
+
+.story-skills .container .info .pro:hover div {
+	display: block;
+	transform: scaleX(1);
+}
+
+.story-skills .container .info .pro div:before {
+	content: '';
+	display: block;
+	position: absolute;
+	z-index: -1;
+	border: .8875vw solid transparent;	
+	border-left: .8875vw solid black; 
+	border-top: .8875vw solid black;	
+}
+
+.story-skills .container .info .pro div:nth-of-type(1) {
+	margin-left: 30.6vw;
+}
+
+.story-skills .container .info .pro div:nth-of-type(2) {
+	margin-left: 32.57vw;
+}
+
+.story-skills .container .info .pro div:nth-of-type(3) {
+	margin-left: 17.5vw;
+}
+
+.story-skills .container .info .pro div:nth-of-type(4) {
+	margin-left: 29.04vw;
+}
+
+
+/*     about-team     */
+
+
+.about-team {
+	text-align: center;
+	background: #ffffff;
+	padding: 6.25vw 0 4.75vw 0;
+}
+
+.about-team h1 {
+	font-family: Roboto;
+	font-size: 1.7vw;
+	font-weight: normal;
+	text-transform: uppercase;
+	letter-spacing: .75vw;
+	color: #000000;
+}
+
+.about-team span {
+	display: block;
+	width: 39.1875vw;
+	margin: 2.6875vw auto 0;
+	font-family: Roboto;
+	font-size: .9vw;
+	line-height: 1.8vw;
+}
+
+.about-team .cast {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin: 4.375vw auto 0;
+	width: 71.5vw;
+}
+
+.about-team .cast .s-portfolio {
+	width: 22.375vw;
+	background: #fcfcfc;
+	text-align: left;
+}
+
+.about-team .cast .s-portfolio .photo {
+	display: block;
+	width: 100%;
+	height: 27.4375vw;
+	background: #eeeeee;
+	background-position: center top;
+	background-repeat: no-repeat;
+	-webkit-background-size: contain;
+	background-size: contain;
+}
+
+.about-team .cast .s-portfolio:nth-of-type(1) .photo {
+	background-image: url('../resources/img/about/team/LianJoy.jpg');
+}
+
+.about-team .cast .s-portfolio:nth-of-type(2) .photo {
+	background-image: url('../resources/img/about/team/RomanKomarowski.jpg');
+}
+
+.about-team .cast .s-portfolio:nth-of-type(3) .photo {
+	background-image: url('../resources/img/about/team/JennPereira.jpg');
+}
+
+.about-team .cast .s-portfolio .cutaway {
+	height: 11.8125vw;
+	padding: 2.25vw 2.25vw 0 2.25vw;
+	overflow: hidden;
+}
+
+.about-team .cast .s-portfolio .cutaway h3 {
+	display: inline-block;
+	font-family: Roboto Light;
+	font-weight: normal;
+	font-size: 1.6vw;
+	text-transform: uppercase;
+	color: black;
+}
+
+.about-team .cast .s-portfolio .cutaway span {
+	margin: 0;
+	font-family: Myriad Pro Regular;
+	font-size: 1vw;
+	font-weight: bold;
+}
+
+.about-team .cast .s-portfolio .cutaway p {
+	margin: .7vw 0 0 0;
+	font-family: Roboto;
+	font-size: .9vw;
+	line-height: 1.4vw;
+	color: #9c9c9c;
+}
+
+.about-team .cast .s-portfolio:hover {
+	box-shadow: 0 0 1.25vw .025vw rgba(0, 0, 0, 0.18);
+}
+
+.about-team .cast .s-portfolio:hover h3 {
+	font-weight: bold;
+}
+
+.about-team .cast .s-portfolio:hover span {
+	color: black;
+}
+
+.about-team .cast .s-portfolio:hover p {
+	font-weight: bold;
+	color: #777777;
+}
+
