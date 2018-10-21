@@ -487,11 +487,15 @@ footer .all-rights-reserved span span {
 }
 
 
-/*     about-banner     */
+/*     about-banner && portfolio-banner     */
 
+
+.about-banner,
+.portfolio-banner {
+	height: 21.875vw;
+}
 
 .about-banner {
-	height: 21.875vw;
 	background: linear-gradient(to left, #ffffff, #f0f0f2);
 	background-image: url('../resources/img/about/about-banner.png');
 	background-repeat: no-repeat;
@@ -501,7 +505,8 @@ footer .all-rights-reserved span span {
 	background-position-x: right;
 }
 
-.about-banner h1 {
+.about-banner h1,
+.portfolio-banner h1 {
 	display: inline-block;
 	font-family: Roboto Light;
 	font-size: 2.75vw;
@@ -514,7 +519,8 @@ footer .all-rights-reserved span span {
 	margin: 7.1875vw 0 0 14.25vw;
 }
 
-.about-banner span {
+.about-banner span,
+.portfolio-banner span {
 	display: block;
 	font-family: Myriad Pro Regular;
 	font-size: 1.0725vw;
@@ -796,3 +802,16 @@ footer .all-rights-reserved span span {
 	color: #777777;
 }
 
+
+/*     portfolio-banner     */
+
+
+.portfolio-banner {
+	background: #e2e2e2;
+	background-image: url('../resources/img/portfolio/portfolio-banner.jpg');
+	background-repeat: no-repeat;
+	-webkit-background-size: auto 30vw;
+	background-size: auto 22vw;
+	background-position-y: 0vw;
+	background-position-x: right;
+}
