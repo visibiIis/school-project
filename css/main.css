@@ -69,11 +69,10 @@ header .site-logo {
 	margin-left: 14.25vw;
 	margin-right: 54vw;
 
-	/* Отмена выделения логотипа */
-    -webkit-user-select: none;
-   	   -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+   -webkit-user-select: none;
+   	-moz-user-select: none;
+       -ms-user-select: none;
+           user-select: none;
 }
 
 header .site-logo img {
@@ -340,7 +339,7 @@ header.fixed + .about-banner {
 	color: #ffffff;
 	background: #000000;
 	text-transform: uppercase;
-	max-width: 56.25vw;
+	max-width: 70vw;
 }
 
 .main-photoslider span {
@@ -373,10 +372,10 @@ header.fixed + .about-banner {
 	padding: 1.325vw 0 1.325vw 0; 
 
 	-webkit-user-select: none;
-   	   -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-}
+		-moz-user-select: none;
+		 -ms-user-select: none;
+			  user-select: none;
+	}
 
 .main-gallery .category-list li {
 	display: inline-block;
@@ -407,6 +406,11 @@ header.fixed + .about-banner {
 
 .main-gallery .photos {
 	margin: 1.8125vw 0 0 0;
+
+	-webkit-user-select: none;
+		-moz-user-select: none;
+		 -ms-user-select: none;
+			  user-select: none;
 }
 
 .main-gallery .photos .gutter-sizer {
@@ -416,8 +420,273 @@ header.fixed + .about-banner {
 .main-gallery .photos img {
 	width: 22.5vw;
 	margin: 0 0 1.875vw 0;
+	cursor: pointer;
+	-webkit-transition: box-shadow ease-out 0.2s;
+      -moz-transition: box-shadow ease-out 0.2s;
+     	  -o-transition: box-shadow ease-out 0.2s;
+      	  transition: box-shadow ease-out 0.2s;
 }
 
+.main-gallery .photos img:hover {
+	-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, .3), 0 0 40px rgba(0, 0, 0, .1) inset;
+      -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, .3), 0 0 40px rgba(0, 0, 0, .1) inset;
+           box-shadow: 0 1px 4px rgba(0, 0, 0, .3), 0 0 40px rgba(0, 0, 0, .1) inset;
+}
+
+.main-gallery .photos img:hover:after,
+.main-gallery .photos img:hover:before {
+	content:"";
+	position:absolute;
+	z-index:-1;
+	-webkit-box-shadow: 0 0 20px rgba(0, 0, 0, .8);
+	-moz-box-shadow: 0 0 20px rgba(0, 0, 0, .8);
+	box-shadow: 0 0 20px rgba(0, 0, 0, .8);
+	top: 0;
+	bottom: 0;
+	left: 10px;
+	right: 10px;
+	-moz-border-radius: 100px / 10px;
+	border-radius: 100px / 10px;
+}
+
+.main-gallery .photos img:hover:after {
+	right: 10px;
+	left: auto;
+	-webkit-transform: skew(8deg) rotate(3deg);
+	 	-moz-transform: skew(8deg) rotate(3deg);
+		 -ms-transform: skew(8deg) rotate(3deg);
+		  -o-transform: skew(8deg) rotate(3deg);
+		     transform: skew(8deg) rotate(3deg);
+}
+
+.separate-gallery {
+	height: 52.75vw;
+	background: #fafafa;
+}
+
+.separate-gallery .control-panel {
+	background: #ffffff;
+	padding: 0 14.25vw 0 14.25vw;
+	margin: 0 0 4.5625vw 0;
+
+	-webkit-user-select: none;
+		-moz-user-select: none;
+		 -ms-user-select: none;
+			  user-select: none;
+}
+
+.separate-gallery .control-panel * {
+	display: inline-block;
+	line-height: 3.5625vw;
+	font-family: Roboto Bold;
+	font-size: .8125vw;
+	color: black;
+	/*text-align: center;*/
+	text-transform: uppercase;
+}
+
+.separate-gallery .control-panel .prev,
+.separate-gallery .control-panel .next,
+.separate-gallery .control-panel .sall {
+	width: 10.125vw;
+	height: 3.5625vw;
+	cursor: pointer;
+}
+
+.separate-gallery .control-panel .prev {
+	padding-left: 3.5vw;
+	border-left: .0625vw solid #ebebeb;
+	border-right: .0625vw solid #ebebeb;
+	background-image: url('../resources/img/gallery/control/left-arrow.png');
+	background-repeat: no-repeat;
+	-webkit-background-size: auto .4375vw;
+	background-size: auto .4375vw;
+	background-position: 2.4vw 49.3%;
+}
+
+.separate-gallery .control-panel .next {
+	padding-left: 2.75vw;
+	margin-left: -0.3vw;
+	border-right: .0625vw solid #ebebeb;
+	background-image: url(../resources/img/gallery/control/right-arrow.png);
+	background-repeat: no-repeat;
+	-webkit-background-size: auto .4375vw;
+	background-size: auto .4375vw;
+	background-position: 6.5vw 49.3%;
+}
+
+.separate-gallery .control-panel .sall {
+	padding-left: 4.325vw;
+	float: right;
+	border-left: .0625vw solid #ebebeb;
+	border-right: .0625vw solid #ebebeb;
+	background-image: url(../resources/img/gallery/control/list.png);
+	background-repeat: no-repeat;
+	-webkit-background-size: auto .6875vw;
+	background-size: auto .6875vw;
+	background-position: 3.075vw 49.3%;
+}
+
+.separate-gallery .photo-desc {
+	width: 34.25vw;
+	float: left;
+	margin-left: 14.25vw;
+}
+
+.separate-gallery .photo-desc h1 {
+	font-family: Roboto;
+	font-size: 1.7vw;
+	font-weight: normal;
+	text-transform: uppercase;
+	letter-spacing: .25vw;
+	color: #000000;
+	margin-bottom: .5vw;
+}
+
+.separate-gallery .photo-desc h1 + span {
+	font-family: Myriad Pro Regular;
+	font-size: 1.1vw;
+	font-weight: bold;
+	color: #555555;
+}
+
+.separate-gallery .photo-desc h1 + span:after {
+	content: '';
+	display: block;
+	width: 100%;
+	height: .0625vw;
+	margin-top: 1.5625vw;
+	background: #cccccc;
+}
+
+.separate-gallery .photo-desc .date {
+	font-family: Myriad Pro Regular;
+	font-size: 1vw;
+	font-weight: bold;
+	color: #555555;
+	display: block;
+	margin: 1.875vw 0 2vw 0;
+}
+
+.separate-gallery .photo-desc .hist {
+	font-family: Roboto Regular;
+	font-size: .875vw;
+	line-height: 1.875vw;
+}
+
+.separate-gallery .photo-desc .hist:after {
+	content: '';
+	display: block;
+	width: 100%;
+	height: .0625vw;
+	margin-top: 1.5625vw;
+	background: #cccccc;
+}
+
+.separate-gallery .photo-desc .role {
+	font-family: Roboto Bold;
+	font-size: 1.1vw;
+	color: #000000;
+	display: block;
+	margin: 1.875vw 0 .3vw 0;
+	text-transform: uppercase;
+}
+
+.separate-gallery .photo-desc .role-names {
+	font-family: Roboto Regular;
+	font-size: .875vw;
+	line-height: 1.875vw;
+}
+
+.separate-gallery .photo-desc .tags {
+	font-family: Roboto Bold;
+	font-size: 1.1vw;
+	color: #000000;
+	display: block;
+	margin: 2.1vw 0 .3vw 0;
+	text-transform: uppercase;
+}
+
+.separate-gallery .photo-desc .tag-names {
+	font-family: Roboto Regular;
+	font-size: .875vw;
+	line-height: 1.875vw;
+	text-transform: capitalize;
+}
+
+.separate-gallery .photos {
+	width: 34.5vw;
+	float: right;
+	margin-right: 14.25vw;
+}
+
+.separate-gallery .photos .main-view {
+	width: 34.5vw;
+	height: 21.875vw;
+	position: relative;
+	overflow: hidden;
+}
+
+.separate-gallery .photos .main-view img {
+	position: absolute;
+	height: inherit;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.separate-gallery .photos .second-view {
+	width: 8.1875vw;
+	height: 7.1875vw;
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+	margin: .5625vw 0 0 .5625vw;
+}
+
+.separate-gallery .photos .second-view:hover {
+	cursor: pointer;
+}
+
+.separate-gallery .photos .second-view:nth-child(2) {
+	margin: .5625vw 0 0 0;
+}
+
+.separate-gallery .photos .second-view:nth-child(2):hover {
+	cursor: default;
+}
+
+.separate-gallery .photos .second-view:nth-child(2):after {
+	content: '';
+	display: block;
+	width: 10vw;
+	height: 10vw;
+	background: #000000;
+	z-index: 1;
+	opacity: .5;
+}
+
+.separate-gallery .photos .second-view:nth-child(n+6) {
+	display: none;
+}
+
+.separate-gallery .photos .second-view img {
+	position: absolute;
+	height: inherit;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+/*.separate-gallery .control-panel .prev:after {
+	content: '';
+	display: inline-block;
+	position: absolute;
+	border-right: .0625vw solid #ebebeb;
+	height: 3.5625vw;
+	margin-left: 3.25vw;
+}
+*/
 
 /*     footer     */
 
@@ -433,9 +702,9 @@ footer .site-logo {
 	text-align: center;
 
 	-webkit-user-select: none;
-   	   -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+   	-moz-user-select: none;
+       -ms-user-select: none;
+           user-select: none;
 }
 
 footer .site-logo img {
@@ -449,12 +718,12 @@ footer .social-networks {
 	word-spacing: 3.5625vw;
 	border-top: 1px solid #ebebeb;
 	border-bottom: 1px solid #ebebeb;
-	padding: .875vw 0 .875vw 0;
+	padding: .875vw 0 .675vw 0;
 
 	-webkit-user-select: none;
-   	   -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+   	-moz-user-select: none;
+       -ms-user-select: none;
+           user-select: none;
 }
 
 footer .social-networks a {
@@ -814,4 +1083,8 @@ footer .all-rights-reserved span span {
 	background-size: auto 22vw;
 	background-position-y: 0vw;
 	background-position-x: right;
+}
+
+header.fixed + .portfolio-banner {
+	margin-top: 5vw;
 }
